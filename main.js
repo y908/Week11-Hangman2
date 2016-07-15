@@ -32,7 +32,7 @@ inquirer.prompt([
 
      bank.wordbank();*/
 
-     console.log(word.yana.test);
+     console.log(word.yana.gameCheck());
 
     }
 
