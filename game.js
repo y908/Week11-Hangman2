@@ -1,5 +1,21 @@
-exports.wordbank = {
+/*exports.wordbank = {
   words: ["Banana", "Orange", "Apple", "Mango"],
-/*  currentWord: exports.wordbank.words[Math.floor(Math.random()*words.length)]*/
+}
+*/
+
+
+
+
+function wordbank(){
+
+  console.log("this works...");
+
 
 }
+
+
+
+var foo = "nice!";
+
+module.exports.foo = foo;
+module.exports.wordbank = wordbank;

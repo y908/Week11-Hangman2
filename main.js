@@ -1,6 +1,9 @@
 var inquirer = require('inquirer');
 var letters = require('./letter');
 var bank = require('./game');
+var word = require('./word');
+
+function ask(){
 
 inquirer.prompt([
 
@@ -16,13 +19,27 @@ inquirer.prompt([
 
     if (game.guess < 64 || game.guess > 91){
       console.log("Please type a letter.");
+
+      ask();
     }
 
     else{
-      console.log(bank.wordbank.words[Math.floor(Math.random()*bank.wordbank.words.length)]);
+     /* console.log(bank.wordbank.words[Math.floor(Math.random()*bank.wordbank.words.length)]);*/
+
+     //bank.wordbank();
+
+     console.log(bank.foo);
+
+     bank.wordbank();
+
     }
 
  
-
-  // Use user feedback for... whatever!! 
 }); 
+
+
+}
+
+ask();
+
+
