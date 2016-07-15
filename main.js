@@ -1,6 +1,6 @@
 var inquirer = require('inquirer');
-var letters = require('./letter');
-var wordbank = require('./game');
+var letter = require('./letter');
+var game = require('./game');
 var word = require('./word');
 
 function ask(){
@@ -24,15 +24,16 @@ inquirer.prompt([
     }
 
     else{
-     /* console.log(bank.wordbank.words[Math.floor(Math.random()*bank.wordbank.words.length)]);*/
+     /* console.log(bank.game.words[Math.floor(Math.random()*bank.game.words.length)]);*/
 
-     //bank.wordbank();
+     //bank.game();
 
      /*console.log(bank.foo);
 
-     bank.wordbank();*/
+     bank.game();*/
 
      console.log(word.yana.gameCheck());
+     console.log(letter.yana2.test);
 
     }
 

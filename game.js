@@ -1,15 +1,16 @@
-var wordbank = {
-  words: ["Banana", "Orange", "Apple", "Mango"],
+var fruits = {
+  words: ["Banana", "Orange", "Apple", "Mango"]
 }
 
+var currentWord = fruits.words[Math.floor(Math.random()*fruits.words.length)];
 
-console.log(wordbank.words[Math.floor(Math.random()*wordbank.words.length)]);
+console.log(currentWord);
 
 
-
+module.exports.currentWord = currentWord;
 
 /*
-function wordbank(){
+function fruits(){
 
   console.log("this works...");
 
@@ -21,4 +22,4 @@ function wordbank(){
 var foo = "nice!";
 
 module.exports.foo = foo;
-module.exports.wordbank = wordbank;*/
+module.exports.fruits = fruits;*/

@@ -1,13 +1,20 @@
-var Wordbank = require('./game');
+var game = require('./game');
 
-function checker(options) {
+/*console.log("------------------");
+console.log(game.currentWord);
+console.log("------------------");*/
+
+function Checker(options) {
+  //the number of guesses remaining
   this.counter = options.counter;
 
+  //code to decrease the counter
   this.decreaseCounter = function(){
     this.counter--;
     console.log("Number of guesses remaining: "+this.counter);
   }
 
+  //
   this.gameCheck = function(){
     if (this.counter == 10){
       console.log("Yay this works");
@@ -17,8 +24,8 @@ function checker(options) {
 
 }
 
-var yana = new checker({counter: 10});
+var yana = new Checker({counter: 10});
 
-module.exports.checker = checker;
+module.exports.Checker = Checker;
 
 module.exports.yana = yana;
