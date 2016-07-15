@@ -1,14 +1,11 @@
 var inquirer = require('inquirer');
-var works = require('./letter');
-
-  console.log(works.letter.a);
-
-
+var letters = require('./letter');
+var bank = require('./game');
 
 inquirer.prompt([
 
    {
-    type: "prompt",
+    type: "list",
     name: "selection",
     message: "Let's play hangman! What level do you want ",
     choices: ["hard", "medium", "easy",] 
@@ -17,7 +14,7 @@ inquirer.prompt([
   ]).then(function (answers) {
 
 
-  console.log(works.letter.a);
+  console.log(bank.wordbank.words[2]);
 
   // Use user feedback for... whatever!! 
 }); 
