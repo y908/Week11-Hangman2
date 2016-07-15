@@ -6,18 +6,20 @@ inquirer.prompt([
 
    {
     type: "input",
-    name: "question",
+    name: "guess",
     message: "Guess a Letter:",
      
   }
 
-  ]).then(function (answer) {
-    if (answer.question < 64 || answer.question > 91){
-      console.log("this works");
+  ]).then(function (game) {
+
+
+    if (game.guess < 64 || game.guess > 91){
+      console.log("Please type a letter.");
     }
 
     else{
-      console.log(bank.wordbank.words[2]);
+      console.log(bank.wordbank.words[Math.floor(Math.random()*bank.wordbank.words.length)]);
     }
 
  
