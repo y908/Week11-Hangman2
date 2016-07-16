@@ -24,6 +24,8 @@ inquirer.prompt([
     }
 
     else{
+
+
      /* console.log(bank.game.words[Math.floor(Math.random()*bank.game.words.length)]);*/
 
      //bank.game();
@@ -31,6 +33,8 @@ inquirer.prompt([
      /*console.log(bank.foo);
 
      bank.game();*/
+
+     word.yana.letterCheck(game.guess);
 
      console.log(word.yana.gameCheck());
      console.log(letter.yana2.lines());

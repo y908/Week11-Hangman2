@@ -1,4 +1,6 @@
 var game = require('./game');
+var letter = require('./letter');
+var found = 0;
 
 /*console.log("------------------");
 console.log(game.currentWord);
@@ -20,7 +22,22 @@ function Checker(options) {
       console.log("Yay this works");
       this.decreaseCounter();
     }
-  };
+  }
+
+
+  this.letterCheck = function(l){
+
+    console.log("your letterCheck is: " + l);
+
+/*    var gameWord =  game.currentWord.split('')
+    for(var i = 0; i<game.currentWord.length; i++){
+      if (main.game.guess == gameWord[i]){
+        letter.dashedWord[i] == game.currentWord;
+        found = 1; 
+      }
+    }*/
+
+  } // end of letterCheck
 
 }
 
