@@ -33,7 +33,7 @@ inquirer.prompt([
      bank.game();*/
 
      console.log(word.yana.gameCheck());
-     console.log(letter.yana2.test);
+     console.log(letter.yana2.lines());
 
     }
 
