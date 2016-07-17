@@ -1,50 +1,42 @@
+//get data from other js files
 var inquirer = require('inquirer');
-var letter = require('./letter');
+var Letter = require('./letter');
 var game = require('./game');
-var word = require('./word');
-
-function ask(){
-
-inquirer.prompt([
-
-   {
-    type: "input",
-    name: "guess",
-    message: "Guess a Letter:",
-     
-  }
-
-  ]).then(function (game) {
+var Checker = require('./checker');
 
 
-    if (game.guess < 64 || game.guess > 91){
-      console.log("Please type a letter.");
+console.log('currentWord', game.currentWord);
+var letters = new Letter(game.currentWord);
+var checker = new Checker({counter: 10, word: game.currentWord, letters: letters});
+console.log("letters", letters);
 
-      ask();
+//=======================================================
+//this prompts user to make a letter guess
+//=======================================================
+function ask() {  //recursive functiion to make the game continue
+  inquirer.prompt([
+     {
+      type: "input",
+      name: "guess",
+      message: "Guess a Letter:",
+       
     }
-
-    else{
-
-
-     /* console.log(bank.game.words[Math.floor(Math.random()*bank.game.words.length)]);*/
-
-     //bank.game();
-
-     /*console.log(bank.foo);
-
-     bank.game();*/
-
-     word.yana.letterCheck(game.guess);
-
-     console.log(word.yana.gameCheck());
-     console.log(letter.yana2.lines());
-
-    }
-
- 
-}); 
-
-
+    ]).then(function (game) {
+      //if the persons types anything other than a letter
+      //they get an message
+      if (game.guess < 64 || game.guess > 91){
+        console.log("Please type a letter.");
+        ask();
+      }
+      else{
+      //else the game continues  
+       checker.letterCheck(game.guess);
+       console.log('checking game');
+       checker.gameCheck();
+       console.log('done gameCheck()');
+       ask();
+      }
+  }); 
 }
 
 ask();

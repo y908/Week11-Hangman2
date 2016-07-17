@@ -1,19 +1,16 @@
-var game = require('./game');
-
-
-function Dashes(options){
-  
-  this.lines = function(){
-    var dashedWord = game.currentWord.split('')
-    for(var i = 0; i<game.currentWord.length; i++){
-    dashedWord[i] = '_ ';
-   }
-   console.log(dashedWord.join(''));
+function Letter(word) {
+  this.dashedWord = word.split('');
+  for(var i = 0; i< word.length; i++) {
+    this.dashedWord[i] = '_ ';
   }
 
+  this.printLines = function() {
+   console.log('in Dashes.lines', this.dashedWord);
+  }
 }
 
-var yana2 = new Dashes({});
+module.exports = Letter;
 
-module.exports.Dashes = Dashes;
-module.exports.yana2 = yana2; 
+
+
+//check my file with his..check letter, 
