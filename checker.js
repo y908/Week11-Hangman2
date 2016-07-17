@@ -1,3 +1,5 @@
+
+// found is a flag to see if a letter was found in the currentWord
 var found = 0;
 
 /*console.log("------------------");
@@ -16,7 +18,7 @@ function Checker(options) {
     console.log('in decreaseCounter');
     console.log("counter", this.counter);
     this.counter--;
-    console.log("Number of guesses remaining: "+this.counter);
+    console.log("Number of guesses remaining: "+ this.counter);
   }
 
   //
@@ -27,35 +29,38 @@ function Checker(options) {
     //then if the counter is greater than 0, decrease it
     var gameWon = false;
 
-    
-    if (gameWon == true) {
-      //your win code
-    } else if (this.counter > 0){   
-      this.decreaseCounter();
-       console.log("Yay this works, the counter is", this.counter);
-    } else if (this.counter == 0) {
-      //game over code
+      if (gameWon == true) {
+      console.log('Wow! You won!')
+      
+/*    } else if (this.counter > 0 && found == 0){   
+      this.decreaseCounter();*/
+       
+    }else if (this.counter == 0) {
+      console.log('Sorry, you lost. Try again!');
     }
   }
 
 
-  this.letterCheck = function(l){
+  this.letterCheck = function(L){
 
-    console.log("your letterCheck is: " + l);
-    console.log('wordarray', this.wordArray);
+    console.log("your letterCheck is: " + L);
+    console.log('wordaAray', this.wordArray);
     for(var i = 0; i< this.wordArray.length; i++){
-      if (l == this.wordArray[i]) {
+      if (L == this.wordArray[i]) {
         console.log('matched!', this.letters);
-        this.letters.dashedWord[i] = l;
+        this.letters.dashedWord[i] = L;
         found = 1; 
         console.log('this.letters', this.letters);
         console.log('calling lines!');
         this.letters.printLines();
-
-
-
-
       }
+    }
+    if (found == 1){
+        found = 0;
+    }
+    else {
+        this.decreaseCounter();
+        //found = 0;
     }
 
   } // end of letterCheck

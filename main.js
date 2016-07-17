@@ -5,10 +5,10 @@ var game = require('./game');
 var Checker = require('./checker');
 
 
-console.log('currentWord', game.currentWord);
+console.log('The Current Word is:', game.currentWord);
 var letters = new Letter(game.currentWord);
 var checker = new Checker({counter: 10, word: game.currentWord, letters: letters});
-console.log("letters", letters);
+
 
 //=======================================================
 //this prompts user to make a letter guess
