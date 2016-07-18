@@ -5,15 +5,17 @@ var game = require('./game');
 var Checker = require('./checker');
 
 
+//console.log("game state: " + Checker.gameWon);
+
 console.log('The Current Word is:', game.currentWord);
 var letters = new Letter(game.currentWord);
-var checker = new Checker({counter: 10, word: game.currentWord, letters: letters});
-
+var checker = new Checker({counter: 10, wordArray: game.currentWord, letters: letters});
+console.log("letters object: ", letters);
 
 //=======================================================
 //this prompts user to make a letter guess
 //=======================================================
-function ask() {  //recursive functiion to make the game continue
+function ask() {  //recursive function to make the game continue
   inquirer.prompt([
      {
       type: "input",
